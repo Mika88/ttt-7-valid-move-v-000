@@ -1,6 +1,6 @@
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def position_taken?(board, index)
-  if board[index] == " " ||board[index] == "" || board[index] == nil
+  if board[index] == " " || board[index] == "" || board[index] == nil
     return false
   elsif board[index] == "X" || board[index] == "O"
    return true
@@ -8,6 +8,7 @@ def position_taken?(board, index)
  end
 def valid_move?(board, index)
    board[index]
+   index.between?(0, 8)
   if index.between?(0, 8) && position_taken?(board, index) == false
      return true
    end
